@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --cream: 250 251 252;
+    --surface: 255 255 255;
+    --line: 230 234 240;
+    --ink: 11 37 69;
+    --body: 71 85 105;
+    --muted: 148 163 184;
+  }
+
+  .dark {
+    --cream: 8 13 24;
+    --surface: 18 27 46;
+    --line: 40 53 77;
+    --ink: 236 241 248;
+    --body: 168 179 196;
+    --muted: 111 123 143;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream text-body antialiased;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-heading text-ink;
+  }
+}
+
+@layer components {
+  .text-gradient {
+    @apply bg-brand-gradient bg-clip-text text-transparent;
+  }
+
+  .brand-ring {
+    box-shadow: 0 0 0 1px rgba(11, 37, 69, 0.06);
+  }
+}
