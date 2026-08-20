@@ -1,8 +1,7 @@
 import { Menu, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useEffect, useState } from 'react'
-import { navLinks, siteConfig } from '../../data/content'
-import { Button } from '../ui/Button'
+import { navLinks } from '../../data/content'
 import { Logo } from '../ui/Logo'
 import { ThemeToggle } from '../ui/ThemeToggle'
 
@@ -46,11 +45,8 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden lg:block">
           <ThemeToggle />
-          <Button href={siteConfig.forms.bookSession} variant="cta">
-            Book a Session
-          </Button>
         </div>
 
         <div className="flex items-center gap-2 lg:hidden">
@@ -86,14 +82,6 @@ export function Header() {
                   {link.label}
                 </a>
               ))}
-              <Button
-                href={siteConfig.forms.bookSession}
-                variant="cta"
-                className="mt-2 w-full"
-                onClick={() => setMobileOpen(false)}
-              >
-                Book a Session
-              </Button>
             </nav>
           </motion.div>
         )}

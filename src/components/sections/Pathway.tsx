@@ -15,8 +15,8 @@ export function Pathway() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="How it works"
-          title="Your pathway, step by step"
-          subtitle="A simple, structured journey from curiosity to real achievement — the same three moves behind everything we do."
+          title="From discovery to long-term growth"
+          subtitle="We streamline the process by organizing the information you need — including deadlines and key requirements — so you can spend less time searching and more time focusing on your growth."
         />
 
         <div className="relative grid gap-6 md:grid-cols-3">

@@ -2,7 +2,6 @@ import { motion } from 'framer-motion'
 import { Instagram, Linkedin } from 'lucide-react'
 import { hiringRoles, siteConfig } from '../../data/content'
 import { AnimatedSection } from '../ui/AnimatedSection'
-import { Button } from '../ui/Button'
 import { SectionHeading } from '../ui/SectionHeading'
 
 export function JoinTeam() {
@@ -12,7 +11,7 @@ export function JoinTeam() {
         <SectionHeading
           eyebrow="Careers"
           title="We're hiring student leaders"
-          subtitle="Co-Curricular Network is building a team of motivated students who want to help expand access to meaningful opportunities for others."
+          subtitle={`Welcome to the Co-Curricular Network — a student-led hub founded by ${siteConfig.founders.map((f) => f.name).join(' and ')}. We're building a team of motivated students who want to help expand access to meaningful opportunities for others.`}
         />
 
         <div className="grid gap-8 lg:grid-cols-3">
@@ -52,10 +51,7 @@ export function JoinTeam() {
         </div>
 
         <div className="mt-12 text-center">
-          <Button href={siteConfig.forms.joinTeam} variant="cta">
-            Apply to Join the Team
-          </Button>
-          <p className="mt-4 text-sm text-body">
+          <p className="text-sm text-body">
             Applications are currently open for marketing, logistics, and research roles.
           </p>
 

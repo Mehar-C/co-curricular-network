@@ -11,8 +11,8 @@ export function Footer() {
           <div>
             <Logo variant="light" tagline />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/70">
-              Connecting students to competitions, MUNs, hackathons, mentorship, and opportunities
-              that shape their future.
+              A student-led co-curricular forum centralizing vetted opportunities in debate, MUN,
+              entrepreneurship, social initiatives, and STEM.
             </p>
           </div>
 

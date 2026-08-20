@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, Award, Code2, Gavel, Sparkles, Trophy } from 'lucide-react'
+import { Award, Code2, Gavel, Sparkles, Trophy } from 'lucide-react'
 import { siteConfig } from '../../data/content'
-import { Button } from '../ui/Button'
 
 export function Hero() {
   return (
@@ -51,21 +50,6 @@ export function Hero() {
               We connect students to competitions, MUNs, hackathons, mentorship, and experiences
               that build real skills — no insider network required.
             </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55, delay: 0.3 }}
-              className="mt-8 flex flex-wrap gap-4"
-            >
-              <Button href={siteConfig.forms.bookSession} variant="cta">
-                Book a Session
-                <ArrowRight className="h-4 w-4" />
-              </Button>
-              <Button href={siteConfig.forms.joinTeam} variant="outline">
-                Join Our Team
-              </Button>
-            </motion.div>
           </div>
 
           <HeroVisual />

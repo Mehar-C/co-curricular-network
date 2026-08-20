@@ -2,15 +2,12 @@ import { Footer } from './components/layout/Footer'
 import { Header } from './components/layout/Header'
 import { About } from './components/sections/About'
 import { CTA } from './components/sections/CTA'
-import { Impact } from './components/sections/Impact'
 import { JoinTeam } from './components/sections/JoinTeam'
 import { Mission } from './components/sections/Mission'
 import { Pathway } from './components/sections/Pathway'
 import { PortalHero } from './components/sections/PortalHero'
 import { Problem } from './components/sections/Problem'
-import { Team } from './components/sections/Team'
 import { WhatWeDo } from './components/sections/WhatWeDo'
-import { BookSession } from './components/ui/BookSession'
 
 function App() {
   return (
@@ -29,13 +26,10 @@ function App() {
         <Mission />
         <WhatWeDo />
         <Pathway />
-        <Team />
         <JoinTeam />
-        <Impact />
         <CTA />
       </main>
       <Footer />
-      <BookSession />
     </>
   )
 }

@@ -1,21 +1,14 @@
 import type { LucideIcon } from 'lucide-react'
 import {
   BarChart3,
-  BookOpen,
-  Briefcase,
-  Building2,
   Calendar,
   Compass,
-  FlaskConical,
-  HandHeart,
+  Lightbulb,
   Map,
   Megaphone,
-  Network,
+  Route,
   Target,
   TrendingUp,
-  UserCheck,
-  Users,
-  Wrench,
 } from 'lucide-react'
 
 export const siteConfig = {
@@ -27,38 +20,47 @@ export const siteConfig = {
     linkedin: { handle: 'Co-Curricular Network', url: 'https://linkedin.com/company/cocurricularnetwork' },
   },
   forms: {
-    bookSession: '#contact',
     getInvolved: '#contact',
-    joinTeam: '#join-team',
   },
+  founders: [
+    { name: 'Kabir Chandhok', handle: '@kabir.chandhok', url: 'https://instagram.com/kabir.chandhok' },
+    { name: 'Axsthax', handle: '@axsthax._', url: 'https://instagram.com/axsthax._' },
+  ],
 }
 
 export const navLinks = [
   { label: 'About', href: '#about' },
   { label: 'What We Do', href: '#what-we-do' },
   { label: 'Pathway', href: '#pathway' },
-  { label: 'Team', href: '#team' },
   { label: 'Join Our Team', href: '#join-team' },
+]
+
+export const focusAreas = [
+  'Debate',
+  'Model United Nations',
+  'Entrepreneurship',
+  'Social Initiatives',
+  'STEM',
 ]
 
 export const problemCards = [
   {
-    title: 'Lack of Access',
+    title: 'Scattered Information',
     description:
-      'Many students do not know where to find quality competitions, mentorship, research exposure, or leadership opportunities — especially outside their immediate circle.',
+      'Opportunities live across dozens of platforms with no central access point — students waste hours searching instead of preparing.',
     icon: Map,
   },
   {
-    title: 'Limited Guidance',
+    title: 'Missed Deadlines',
     description:
-      'Students are often told to get involved, but receive little help navigating options, building a pathway, or understanding what experiences matter for their goals.',
-    icon: Compass,
+      'Elite global programs are discovered too late, closing doors before students even know they existed.',
+    icon: Calendar,
   },
   {
-    title: 'Unequal Networks',
+    title: 'No Structured Path',
     description:
-      'Opportunity often depends on who you know. Without structured access and support, students with fewer connections are left behind.',
-    icon: Network,
+      'Without a clear roadmap, growth and exposure become a fragmented guessing game rather than a deliberate strategy.',
+    icon: Route,
   },
 ]
 
@@ -67,50 +69,26 @@ export const pathwaySteps = [
     step: '01',
     title: 'Discover',
     description:
-      'Explore competitions, MUNs, hackathons, and opportunities matched to your interests and goals.',
+      'Explore vetted opportunities in debate, MUN, entrepreneurship, social initiatives, and STEM — all in one place.',
     icon: Compass,
     color: 'teal' as const,
   },
   {
     step: '02',
-    title: 'Connect',
+    title: 'Understand',
     description:
-      'Get linked with mentors, teammates, and experiences that turn curiosity into real skills.',
-    icon: Users,
+      'Get registration pipelines, deadlines, and selection rounds broken down so you can act with confidence.',
+    icon: Target,
     color: 'coral' as const,
   },
   {
     step: '03',
-    title: 'Achieve',
+    title: 'Grow',
     description:
-      'Build a track record of growth, confidence, and momentum that shapes what comes next.',
+      'Track upcoming programs and build long-term competitive roadmaps across every stage of your journey.',
     icon: TrendingUp,
     color: 'gold' as const,
   },
-]
-
-export const founders = [
-  {
-    name: 'Founder Name',
-    role: 'Co-Founder',
-    bio: 'Add a short founder bio here focused on why they helped build Co-Curricular Network.',
-    initials: 'F1',
-  },
-  {
-    name: 'Founder Name',
-    role: 'Co-Founder',
-    bio: 'Add a short founder bio here focused on their background, interests, and commitment to student access.',
-    initials: 'F2',
-  },
-]
-
-export const teamMembers = [
-  { name: 'Team Member', role: 'Marketing', initials: 'M1', color: 'teal' as const },
-  { name: 'Team Member', role: 'Marketing', initials: 'M2', color: 'coral' as const },
-  { name: 'Team Member', role: 'Logistics', initials: 'L1', color: 'gold' as const },
-  { name: 'Team Member', role: 'Logistics', initials: 'L2', color: 'teal' as const },
-  { name: 'Team Member', role: 'Research', initials: 'R1', color: 'coral' as const },
-  { name: 'Team Member', role: 'Research', initials: 'R2', color: 'gold' as const },
 ]
 
 export type ServiceCard = {
@@ -121,58 +99,22 @@ export type ServiceCard = {
 
 export const whatWeDo: ServiceCard[] = [
   {
-    title: 'Opportunity Matching',
+    title: 'Context & Utility',
     description:
-      'We help students discover structured opportunities aligned with their interests, goals, and availability.',
-    icon: Target,
+      'What the opportunity is and what skills it builds for your profile — so every listing comes with real meaning.',
+    icon: Lightbulb,
   },
   {
-    title: 'Mentorship Connections',
+    title: 'Complete Processes',
     description:
-      'Students connect with mentors who offer guidance, perspective, and support as they explore new paths.',
-    icon: UserCheck,
+      'Registration pipelines, deadlines, and selection rounds — all in one place, so nothing slips through the cracks.',
+    icon: Calendar,
   },
   {
-    title: 'Volunteer & Community Projects',
+    title: 'Future Trajectories',
     description:
-      'Hands-on community experiences that build empathy, teamwork, and real-world impact.',
-    icon: HandHeart,
-  },
-  {
-    title: 'Leadership Development',
-    description:
-      'Roles and programs that help students practice initiative, communication, and responsibility.',
+      'Tracking upcoming programs to help you build long-term competitive roadmaps and stay ahead of the curve.',
     icon: TrendingUp,
-  },
-  {
-    title: 'Research Exposure',
-    description:
-      'Pathways to explore research interests, build skills, and learn how academic inquiry works in practice.',
-    icon: FlaskConical,
-  },
-  {
-    title: 'Career Exploration',
-    description:
-      'Early exposure to careers, workplaces, and professionals across diverse fields.',
-    icon: Briefcase,
-  },
-  {
-    title: 'Application & Portfolio Support',
-    description:
-      'Guidance on reflecting experiences, building portfolios, and presenting growth authentically.',
-    icon: BookOpen,
-  },
-  {
-    title: 'Skill-Building Workshops',
-    description:
-      'Practical sessions on communication, project planning, teamwork, and professional readiness.',
-    icon: Wrench,
-  },
-  {
-    title: 'School & Partner Programs',
-    description:
-      'Collaborative programs that connect schools, students, and community partners in structured ways.',
-    icon: Building2,
   },
 ]
 
@@ -219,11 +161,4 @@ export const hiringRoles = [
     ],
     icon: BarChart3,
   },
-]
-
-export const impactMetrics = [
-  { label: 'Students supported', value: '500+' },
-  { label: 'Opportunities listed', value: '120+' },
-  { label: 'Mentors engaged', value: '45+' },
-  { label: 'Community projects launched', value: '18+' },
 ]

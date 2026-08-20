@@ -5,15 +5,15 @@ import { SectionHeading } from '../ui/SectionHeading'
 
 export function WhatWeDo() {
   return (
-    <AnimatedSection className="bg-surface py-20 sm:py-24">
+    <AnimatedSection id="what-we-do" className="bg-surface py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          eyebrow="Services"
-          title="What we do"
-          subtitle="We connect students to structured opportunities, mentorship, and skill-building experiences — and help partners create accessible pathways along the way."
+          eyebrow="Our solution"
+          title="Where do we come in?"
+          subtitle="We act as a true one-stop resource hub to save you time. For every listed opportunity, we break down exactly what you need to act with confidence."
         />
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 md:grid-cols-3">
           {whatWeDo.map((item, i) => (
             <FeatureCard
               key={item.title}

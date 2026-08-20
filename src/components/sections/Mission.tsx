@@ -24,9 +24,9 @@ export function Mission() {
           Our mission
         </h2>
         <p className="mt-6 text-lg leading-relaxed text-white/80">
-          Co-Curricular Network exists to make meaningful experiences easier to find, access, and
-          navigate. We help students connect their interests to real opportunities while supporting
-          schools, families, and community partners in building stronger pathways.
+          We act as a one-stop resource hub — centralizing vetted opportunities so students spend
+          less time searching and more time competing, building, and leading. Your strengths deserve
+          to be showcased, and we&apos;re here to help you find the right stage to shine.
         </p>
       </div>
     </AnimatedSection>

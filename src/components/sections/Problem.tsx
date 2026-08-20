@@ -8,9 +8,9 @@ export function Problem() {
     <AnimatedSection className="bg-surface py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          eyebrow="The gap"
-          title="Talent is everywhere. Opportunity and awareness are not."
-          subtitle="Students are often told to get involved, build leadership, compete, and gain experience — but many are left to figure it out on their own. The result is unequal access to the opportunities, guidance, and networks that shape future success."
+          eyebrow="The problem"
+          title="Talented students lack awareness of the opportunities that matter."
+          subtitle="Impactful extracurricular programs could strengthen portfolios and profiles — but data is scattered across dozens of platforms, and elite global competitions are frequently discovered only after deadlines have closed."
         />
 
         <div className="grid gap-6 md:grid-cols-3">

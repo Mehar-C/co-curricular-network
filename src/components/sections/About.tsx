@@ -1,65 +1,60 @@
 import { motion } from 'framer-motion'
-import { Globe2, Star, Target, Users } from 'lucide-react'
+import { focusAreas, siteConfig } from '../../data/content'
 import { AnimatedSection } from '../ui/AnimatedSection'
 import { SectionHeading } from '../ui/SectionHeading'
-
-const pillars = [
-  {
-    title: 'Student-Centric',
-    description: 'Everything we do is built around students and their goals.',
-    icon: Users,
-    color: 'bg-teal text-navy',
-  },
-  {
-    title: 'Opportunities',
-    description: 'We surface the right competitions, MUNs, and experiences for you.',
-    icon: Target,
-    color: 'bg-coral text-white',
-  },
-  {
-    title: 'Connect',
-    description: 'A network that brings students, mentors, and partners together.',
-    icon: Globe2,
-    color: 'bg-navy text-white',
-  },
-  {
-    title: 'Achieve',
-    description: 'Empowering students to reach their full potential.',
-    icon: Star,
-    color: 'bg-gold text-navy',
-  },
-]
 
 export function About() {
   return (
     <AnimatedSection id="about" className="py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          eyebrow="Who we are"
-          title="About Co-Curricular Network"
-          subtitle="We make meaningful student opportunities easier to find, access, and navigate. Students should not need insider connections to discover mentorship, competitions, research, and early career experiences."
+          eyebrow="What are we?"
+          title="The Co-Curricular Network"
+          subtitle="We are a co-curricular forum established to centrally identify and disseminate credible opportunities in debate, Model United Nations, entrepreneurship, social initiatives, and STEM — enabling informed and structured student participation across every stage of your academic journey."
         />
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {pillars.map((pillar, i) => (
-            <motion.article
-              key={pillar.title}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mx-auto -mt-6 mb-10 max-w-3xl text-center text-lg leading-relaxed text-body"
+        >
+          Every opportunity is vetted, contextualized, and delivered with clarity — so you spend less
+          time searching and more time competing, building, and leading.
+        </motion.p>
+
+        <div className="flex flex-wrap justify-center gap-3">
+          {focusAreas.map((area, i) => (
+            <motion.span
+              key={area}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
-              className="rounded-3xl border border-line bg-surface p-7 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-card"
+              transition={{ delay: i * 0.05 }}
+              className="rounded-full border border-line bg-surface px-5 py-2.5 text-sm font-medium text-ink shadow-soft"
             >
-              <div
-                className={`mb-4 flex h-12 w-12 items-center justify-center rounded-2xl ${pillar.color}`}
-              >
-                <pillar.icon className="h-6 w-6" aria-hidden />
-              </div>
-              <h3 className="font-heading text-lg font-bold text-ink">{pillar.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-body">{pillar.description}</p>
-            </motion.article>
+              {area}
+            </motion.span>
           ))}
         </div>
+
+        <p className="mt-10 text-center text-sm text-body">
+          A student-led hub by{' '}
+          {siteConfig.founders.map((founder, i) => (
+            <span key={founder.handle}>
+              {i > 0 && ' and '}
+              <a
+                href={founder.url}
+                target="_blank"
+                rel="noreferrer"
+                className="font-medium text-teal-dark hover:text-teal"
+              >
+                {founder.handle}
+              </a>
+            </span>
+          ))}
+          .
+        </p>
       </div>
     </AnimatedSection>
   )

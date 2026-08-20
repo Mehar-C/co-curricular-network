@@ -1,38 +1,29 @@
 import { useLayoutEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { ArrowRight, Award, GraduationCap, Sparkles, Trophy, Users } from 'lucide-react'
+import { GraduationCap, Sparkles, Trophy, Users } from 'lucide-react'
 import { siteConfig } from '../../data/content'
 
 gsap.registerPlugin(ScrollTrigger)
 
 const dashboardCards = [
   {
-    label: 'Competitions',
-    value: '120+ live',
-    hint: 'Hackathons · MUNs · Olympiads',
+    label: 'Debate & MUN',
+    value: 'Vetted',
+    hint: 'Deadlines · Requirements · Context',
     icon: Trophy,
     iconWrap: 'bg-teal/15 text-teal-dark',
     preview: 'from-teal/20 to-teal/5',
     bar: 'bg-teal',
   },
   {
-    label: 'Mentors',
-    value: '45+ pros',
-    hint: 'Guidance from people who’ve done it',
+    label: 'STEM & More',
+    value: '5 areas',
+    hint: 'Entrepreneurship · Social · STEM',
     icon: Users,
     iconWrap: 'bg-violet-500/15 text-violet-600',
     preview: 'from-violet-500/20 to-violet-500/5',
     bar: 'bg-violet-500',
-  },
-  {
-    label: 'Scholarships',
-    value: '$2M+ tracked',
-    hint: 'Funding & awards, curated for you',
-    icon: Award,
-    iconWrap: 'bg-coral/15 text-coral',
-    preview: 'from-coral/20 to-coral/5',
-    bar: 'bg-coral',
   },
 ]
 
@@ -199,31 +190,17 @@ export function PortalHero() {
           </h1>
         </div>
 
-        {/* ===== Phase 3 reveal: heading + buttons + dashboard grid (single column) ===== */}
+        {/* ===== Phase 3 reveal: heading + dashboard grid (single column) ===== */}
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-8 px-6 py-24">
           <div ref={title2Ref} className="flex flex-col items-center text-center">
             <h2 className="max-w-3xl font-heading text-3xl font-bold tracking-tight text-ink sm:text-5xl">
-              Connect with Top <span className="text-gradient">Competitions</span> & Non-Profits.
+              One hub for credible co-curricular opportunities.
             </h2>
-            <div className="mt-7 flex flex-wrap items-center justify-center gap-4">
-              <a
-                href={siteConfig.forms.bookSession}
-                className="inline-flex items-center gap-2 rounded-full bg-coral px-6 py-3 text-sm font-semibold text-white shadow-soft transition-transform hover:scale-105"
-              >
-                Book a Session <ArrowRight className="h-4 w-4" />
-              </a>
-              <a
-                href={siteConfig.forms.joinTeam}
-                className="inline-flex items-center gap-2 rounded-full border-2 border-line bg-surface/70 px-6 py-3 text-sm font-semibold text-ink transition-colors hover:border-teal hover:text-teal-dark"
-              >
-                Join Our Team
-              </a>
-            </div>
           </div>
 
           <div
             ref={gridRef}
-            className="grid w-full max-w-5xl grid-cols-1 gap-5 sm:grid-cols-3"
+            className="grid w-full max-w-3xl grid-cols-1 gap-5 sm:grid-cols-2"
           >
             {dashboardCards.map((card) => (
               <div
