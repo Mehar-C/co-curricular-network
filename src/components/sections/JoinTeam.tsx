@@ -1,18 +1,14 @@
 import { motion } from 'framer-motion'
-import { Instagram, Linkedin } from 'lucide-react'
-import { hiringRoles, siteConfig } from '../../data/content'
+import { hiringRoles } from '../../data/content'
 import { AnimatedSection } from '../ui/AnimatedSection'
+import { ConnectLinks } from '../ui/ConnectLinks'
 import { SectionHeading } from '../ui/SectionHeading'
 
 export function JoinTeam() {
   return (
     <AnimatedSection id="join-team" className="py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          eyebrow="Careers"
-          title="We're hiring student leaders"
-          subtitle={`Welcome to the Co-Curricular Network — a student-led hub founded by ${siteConfig.founders.map((f) => f.name).join(' and ')}. We're building a team of motivated students who want to help expand access to meaningful opportunities for others.`}
-        />
+        <SectionHeading eyebrow="Careers" title="We're hiring student leaders" />
 
         <div className="grid gap-8 lg:grid-cols-3">
           {hiringRoles.map((role, i) => (
@@ -28,9 +24,7 @@ export function JoinTeam() {
                 <role.icon className="h-6 w-6" aria-hidden />
               </div>
               <h3 className="font-heading text-xl font-semibold text-ink">{role.title}</h3>
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-body">
-                {role.description}
-              </p>
+              <p className="mt-3 flex-1 text-sm leading-relaxed text-body">{role.description}</p>
               <div className="mt-5 border-t border-navy/8 pt-5">
                 <p className="text-xs font-semibold uppercase tracking-wider text-teal">
                   Ideal for students interested in
@@ -50,36 +44,11 @@ export function JoinTeam() {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <p className="text-sm text-body">
-            Applications are currently open for marketing, logistics, and research roles.
+        <div className="mt-12 flex flex-col items-center">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-teal-dark">
+            Connect with us
           </p>
-
-          <div className="mt-8 flex flex-col items-center gap-3">
-            <p className="text-xs font-semibold uppercase tracking-widest text-teal-dark">
-              Follow us
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-3">
-              <a
-                href={siteConfig.social.instagram.url}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-line bg-cream px-4 py-2 text-sm font-medium text-ink transition-colors hover:border-coral hover:text-coral"
-              >
-                <Instagram className="h-4 w-4" aria-hidden />
-                {siteConfig.social.instagram.handle}
-              </a>
-              <a
-                href={siteConfig.social.linkedin.url}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-line bg-cream px-4 py-2 text-sm font-medium text-ink transition-colors hover:border-teal hover:text-teal-dark"
-              >
-                <Linkedin className="h-4 w-4" aria-hidden />
-                {siteConfig.social.linkedin.handle}
-              </a>
-            </div>
-          </div>
+          <ConnectLinks />
         </div>
       </div>
     </AnimatedSection>

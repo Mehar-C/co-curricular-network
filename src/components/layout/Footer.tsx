@@ -1,5 +1,5 @@
-import { Instagram, Linkedin, Mail } from 'lucide-react'
 import { navLinks, siteConfig } from '../../data/content'
+import { ConnectLinks } from '../ui/ConnectLinks'
 import { Logo } from '../ui/Logo'
 
 export function Footer() {
@@ -34,33 +34,7 @@ export function Footer() {
 
           <div>
             <p className="text-sm font-semibold uppercase tracking-wider text-teal">Connect</p>
-            <a
-              href={`mailto:${siteConfig.email}`}
-              className="mt-4 flex items-center gap-2 text-sm text-white/70 transition-colors hover:text-white"
-            >
-              <Mail className="h-4 w-4" aria-hidden />
-              {siteConfig.email}
-            </a>
-            <div className="mt-4 flex flex-col gap-2">
-              <a
-                href={siteConfig.social.instagram.url}
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-2 text-sm text-white/70 transition-colors hover:text-white"
-              >
-                <Instagram className="h-4 w-4" aria-hidden />
-                {siteConfig.social.instagram.handle}
-              </a>
-              <a
-                href={siteConfig.social.linkedin.url}
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-2 text-sm text-white/70 transition-colors hover:text-white"
-              >
-                <Linkedin className="h-4 w-4" aria-hidden />
-                {siteConfig.social.linkedin.handle}
-              </a>
-            </div>
+            <ConnectLinks variant="light" className="mt-4" />
           </div>
         </div>
 

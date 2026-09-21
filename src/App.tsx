@@ -3,11 +3,9 @@ import { Header } from './components/layout/Header'
 import { About } from './components/sections/About'
 import { CTA } from './components/sections/CTA'
 import { JoinTeam } from './components/sections/JoinTeam'
-import { Mission } from './components/sections/Mission'
 import { Pathway } from './components/sections/Pathway'
 import { PortalHero } from './components/sections/PortalHero'
 import { Problem } from './components/sections/Problem'
-import { WhatWeDo } from './components/sections/WhatWeDo'
 
 function App() {
   return (
@@ -23,8 +21,6 @@ function App() {
         <PortalHero />
         <Problem />
         <About />
-        <Mission />
-        <WhatWeDo />
         <Pathway />
         <JoinTeam />
         <CTA />
