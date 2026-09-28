@@ -14,7 +14,11 @@ import {
 export const siteConfig = {
   name: 'Co-Curricular Network',
   tagline: 'Discover. Connect. Achieve.',
-  email: 'hello@cocurricularnetwork.org',
+  email: 'cocurricular.net@gmail.com',
+  calendly: {
+    url: 'https://calendly.com/cocurricular-net/30min',
+    label: 'Book consultation now',
+  },
   social: {
     instagram: { handle: '@cocurricular_net', url: 'https://www.instagram.com/cocurricular_net/' },
     linkedin: {
