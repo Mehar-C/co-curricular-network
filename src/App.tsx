@@ -1,5 +1,6 @@
 import { Footer } from './components/layout/Footer'
 import { Header } from './components/layout/Header'
+import { BookSession } from './components/ui/BookSession'
 import { About } from './components/sections/About'
 import { CTA } from './components/sections/CTA'
 import { JoinTeam } from './components/sections/JoinTeam'
@@ -26,6 +27,7 @@ function App() {
         <CTA />
       </main>
       <Footer />
+      <BookSession />
     </>
   )
 }
