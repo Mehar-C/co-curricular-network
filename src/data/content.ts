@@ -3,12 +3,15 @@ import {
   BarChart3,
   Calendar,
   Compass,
+  GraduationCap,
   Lightbulb,
   Map,
   Megaphone,
   Route,
+  Sparkles,
   Target,
   TrendingUp,
+  Users,
 } from 'lucide-react'
 
 export const siteConfig = {
@@ -17,7 +20,7 @@ export const siteConfig = {
   email: 'cocurricular.net@gmail.com',
   calendly: {
     url: 'https://calendly.com/cocurricular-net/30min',
-    label: 'Book a session',
+    label: 'Book a Session',
   },
   social: {
     instagram: { handle: '@cocurricular_net', url: 'https://www.instagram.com/cocurricular_net/' },
@@ -29,21 +32,38 @@ export const siteConfig = {
   forms: {
     getInvolved: '#contact',
   },
-  founders: [
-    {
-      name: 'Kabir Chandhok',
-      handle: '@kabir.chandhok',
-      instagram: 'https://instagram.com/kabir.chandhok',
-      email: 'kabir@cocurricularnetwork.org',
-    },
-    {
-      name: 'Aastha',
-      handle: '@axsthax._',
-      instagram: 'https://instagram.com/axsthax._',
-      email: 'aastha@cocurricularnetwork.org',
-    },
-  ],
 }
+
+export const impactStats = [
+  {
+    value: '500+',
+    label: 'Students Supported',
+    description: 'Empowered across global curricula & competitions',
+    icon: Users,
+    accent: 'teal' as const,
+  },
+  {
+    value: '120+',
+    label: 'Opportunities Listed',
+    description: 'Vetted programs in debate, MUN, STEM & beyond',
+    icon: Compass,
+    accent: 'gold' as const,
+  },
+  {
+    value: '45+',
+    label: 'Mentors & Leaders',
+    description: 'Advising students through rigorous selection rounds',
+    icon: GraduationCap,
+    accent: 'coral' as const,
+  },
+  {
+    value: '18+',
+    label: 'Community Projects',
+    description: 'High-impact student initiatives launched & nurtured',
+    icon: Sparkles,
+    accent: 'teal' as const,
+  },
+]
 
 export const navLinks = [
   { label: 'About', href: '#about' },

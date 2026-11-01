@@ -48,7 +48,7 @@ export function JoinTeam() {
           <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-teal-dark">
             Connect with us
           </p>
-          <ConnectLinks />
+          <ConnectLinks className="flex-row flex-wrap justify-center gap-3" />
         </div>
       </div>
     </AnimatedSection>

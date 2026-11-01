@@ -39,39 +39,52 @@ export function PortalHero() {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.set(gridRef.current, { scale: 0.55, opacity: 0, filter: 'blur(8px)' })
-      gsap.set(title2Ref.current, { opacity: 0, y: 40 })
+      // Set initial hardware-accelerated states
+      gsap.set(gridRef.current, { scale: 0.9, y: 35, opacity: 0 })
+      gsap.set(title2Ref.current, { opacity: 0, y: 30 })
+      gsap.set(flapRef.current, { transformOrigin: 'top center' })
 
       const tl = gsap.timeline({
-        defaults: { ease: 'none' },
+        defaults: { ease: 'power1.out' },
         scrollTrigger: {
           trigger: trackRef.current,
           start: 'top top',
           end: 'bottom bottom',
-          scrub: 1,
+          scrub: 1.2,
         },
       })
 
-      tl.to(flapRef.current, { rotateX: -158, duration: 0.16, ease: 'power2.inOut' }, 0)
-        .to(letterRef.current, { y: -230, duration: 0.24, ease: 'power2.out' }, 0.14)
+      // 1. Envelope flap unfolds smoothly
+      tl.to(flapRef.current, { rotateX: -165, duration: 0.2, ease: 'power1.inOut' }, 0)
 
-      tl.to(envelopeRef.current, { scale: 9.5, duration: 0.4, ease: 'power1.in' }, 0.3)
-        .to(envelopeRef.current, { opacity: 0, duration: 0.22 }, 0.52)
-        .to(title1Ref.current, { opacity: 0, y: -50, duration: 0.2 }, 0.5)
-        .to(hintRef.current, { opacity: 0, duration: 0.15 }, 0.4)
+      // 2. Letter smoothly glides up out of the envelope
+      tl.to(letterRef.current, { y: -220, duration: 0.28, ease: 'power1.out' }, 0.12)
 
+      // 3. Initial title and scroll prompt gracefully fade
+      tl.to(hintRef.current, { opacity: 0, duration: 0.12, ease: 'power1.out' }, 0.26)
+        .to(title1Ref.current, { opacity: 0, y: -35, duration: 0.2, ease: 'power1.out' }, 0.32)
+
+      // 4. Envelope scales forward into the camera and dissolves seamlessly
+      tl.to(envelopeRef.current, { scale: 4.8, duration: 0.38, ease: 'power2.in' }, 0.36)
+        .to(envelopeRef.current, { opacity: 0, duration: 0.22, ease: 'power1.out' }, 0.5)
+
+      // 5. Pathway cards & heading rise smoothly into view with no dead space
       tl.to(
         gridRef.current,
-        { scale: 1, opacity: 1, filter: 'blur(0px)', duration: 0.3, ease: 'power2.out' },
-        0.68,
-      ).to(title2Ref.current, { opacity: 1, y: 0, duration: 0.25, ease: 'power2.out' }, 0.72)
+        { scale: 1, y: 0, opacity: 1, duration: 0.36, ease: 'power2.out' },
+        0.56,
+      ).to(
+        title2Ref.current,
+        { opacity: 1, y: 0, duration: 0.3, ease: 'power2.out' },
+        0.6,
+      )
     }, trackRef)
 
     return () => ctx.revert()
   }, [])
 
   return (
-    <section ref={trackRef} className="relative min-h-[320vh] bg-cream">
+    <section ref={trackRef} className="relative min-h-[300vh] bg-cream">
       <div className="sticky top-0 flex h-screen w-full items-center justify-center overflow-hidden">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute -left-24 top-10 h-96 w-96 rounded-full bg-teal/20 blur-[130px]" />
@@ -82,7 +95,7 @@ export function PortalHero() {
 
         <div
           ref={envelopeRef}
-          className="absolute z-20 flex flex-col items-center"
+          className="absolute z-30 flex flex-col items-center will-change-transform"
           style={{ perspective: 1400 }}
         >
           <div className="relative h-64 w-[22rem] max-w-[86vw]" style={{ perspective: 1200 }}>
@@ -98,7 +111,7 @@ export function PortalHero() {
 
             <div
               ref={flapRef}
-              className="absolute inset-x-0 top-0 z-[2] h-[55%] origin-top"
+              className="absolute inset-x-0 top-0 z-[2] h-[55%] origin-top will-change-transform"
               style={{ transformStyle: 'preserve-3d' }}
             >
               <div
@@ -109,7 +122,7 @@ export function PortalHero() {
                 className="absolute inset-0"
                 style={{
                   clipPath: 'polygon(0 0, 100% 0, 50% 100%)',
-                  transform: 'rotateX(180deg)',
+                  transform: 'rotateY(180deg)',
                   backfaceVisibility: 'hidden',
                   background: 'linear-gradient(180deg, #EAF6F4, #D6ECE9)',
                 }}
@@ -122,7 +135,7 @@ export function PortalHero() {
             >
               <div
                 ref={letterRef}
-                className="absolute left-1/2 top-[68%] w-[18rem] max-w-[78vw] -translate-x-1/2 rounded-xl border border-line bg-surface px-5 pb-5 pt-5 text-center shadow-2xl"
+                className="absolute left-1/2 top-[68%] w-[18rem] max-w-[78vw] -translate-x-1/2 rounded-xl border border-line bg-surface px-5 pb-5 pt-5 text-center shadow-2xl will-change-transform"
               >
                 <span className="mx-auto flex h-9 w-9 items-center justify-center rounded-xl bg-brand-gradient text-white">
                   <GraduationCap className="h-5 w-5" />
@@ -148,6 +161,7 @@ export function PortalHero() {
               className="absolute inset-0 z-[4] rounded-2xl border border-line bg-gradient-to-br from-surface to-cream"
               style={{ clipPath: 'polygon(0 45%, 50% 58%, 100% 45%, 100% 100%, 0 100%)' }}
             />
+
             <div
               className="absolute inset-0 z-[5]"
               style={{
@@ -161,7 +175,7 @@ export function PortalHero() {
 
         <div
           ref={title1Ref}
-          className="pointer-events-none absolute inset-x-0 top-[14vh] z-30 flex flex-col items-center px-6 text-center"
+          className="pointer-events-none absolute inset-x-0 top-[14vh] z-20 flex flex-col items-center px-6 text-center will-change-transform"
         >
           <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-teal/30 bg-teal/10 px-4 py-1.5 text-sm font-medium text-teal-dark">
             <Sparkles className="h-4 w-4" /> {siteConfig.tagline}
@@ -172,7 +186,7 @@ export function PortalHero() {
         </div>
 
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-8 px-6 py-24">
-          <div ref={title2Ref} className="flex flex-col items-center text-center">
+          <div ref={title2Ref} className="flex flex-col items-center text-center will-change-transform">
             <h2 className="max-w-3xl font-heading text-3xl font-bold tracking-tight text-ink sm:text-5xl">
               One hub for credible co-curricular opportunities.
             </h2>
@@ -180,7 +194,7 @@ export function PortalHero() {
 
           <div
             ref={gridRef}
-            className="grid w-full max-w-5xl grid-cols-1 gap-5 sm:grid-cols-3"
+            className="grid w-full max-w-5xl grid-cols-1 gap-5 sm:grid-cols-3 will-change-transform"
           >
             {pathwaySteps.map((step) => {
               const style = accentStyles[step.color]
@@ -207,7 +221,7 @@ export function PortalHero() {
           </div>
         </div>
 
-        <div ref={hintRef} className="absolute bottom-8 left-1/2 z-30 -translate-x-1/2 text-center">
+        <div ref={hintRef} className="absolute bottom-8 left-1/2 z-30 -translate-x-1/2 text-center will-change-transform">
           <p className="text-xs font-medium uppercase tracking-[0.3em] text-ink/40">Scroll to open</p>
           <div className="mx-auto mt-3 flex h-9 w-5 justify-center rounded-full border border-ink/25 p-1">
             <div className="h-2 w-1 animate-bounce rounded-full bg-ink/50" />
