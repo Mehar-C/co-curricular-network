@@ -12,54 +12,35 @@ export default {
         ink: 'rgb(var(--ink) / <alpha-value>)',
         body: 'rgb(var(--body) / <alpha-value>)',
         muted: 'rgb(var(--muted) / <alpha-value>)',
-        // Brand
+        badge: 'rgb(var(--badge-bg) / <alpha-value>)',
+        badgeText: 'rgb(var(--badge-text) / <alpha-value>)',
+
+        // Signature Accent Pop (Option 1: Vermilion Coral)
+        coral: {
+          DEFAULT: '#F25F5C',
+          light: '#F67B79',
+          dark: '#D94845',
+        },
+
+        // Legacy compat tokens mapped cleanly
         navy: {
-          DEFAULT: '#0B2545',
-          light: '#1B3A5C',
+          DEFAULT: '#141618',
+          light: '#22252A',
         },
         teal: {
-          DEFAULT: '#24C8B8',
-          light: '#4FD8CA',
-          dark: '#12A99A',
-        },
-        coral: {
-          DEFAULT: '#F25F73',
-          light: '#F6889A',
-        },
-        gold: {
-          DEFAULT: '#F6B93B',
-          light: '#FBD07A',
-        },
-        // Back-compat aliases (legacy tokens remapped onto the new palette)
-        sage: {
-          DEFAULT: '#24C8B8',
-          light: '#4FD8CA',
+          DEFAULT: '#F25F5C',
+          light: '#F67B79',
+          dark: '#D94845',
         },
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         heading: ['Poppins', 'Inter', 'system-ui', 'sans-serif'],
-        serif: ['Poppins', 'Inter', 'system-ui', 'sans-serif'],
+        mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
       },
       boxShadow: {
-        soft: '0 4px 24px -6px rgba(11, 37, 69, 0.08)',
-        card: '0 14px 40px -12px rgba(11, 37, 69, 0.16)',
-        glow: '0 12px 32px -8px rgba(36, 200, 184, 0.45)',
-      },
-      backgroundImage: {
-        'brand-gradient':
-          'linear-gradient(115deg, #0B2545 0%, #12A99A 45%, #24C8B8 65%, #F25F73 100%)',
-        'brand-soft':
-          'linear-gradient(135deg, rgba(36,200,184,0.12) 0%, rgba(242,95,115,0.10) 100%)',
-      },
-      keyframes: {
-        float: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-8px)' },
-        },
-      },
-      animation: {
-        float: 'float 5s ease-in-out infinite',
+        soft: '0 2px 12px -2px rgba(20, 22, 24, 0.05)',
+        card: '0 8px 30px -4px rgba(20, 22, 24, 0.08)',
       },
     },
   },

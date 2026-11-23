@@ -4,21 +4,27 @@
 
 @layer base {
   :root {
-    --cream: 250 251 252;
-    --surface: 255 255 255;
-    --line: 230 234 240;
-    --ink: 11 37 69;
-    --body: 71 85 105;
-    --muted: 148 163 184;
+    /* Option 1: Editorial Paper & Vermilion (Light) */
+    --cream: 251 249 245;    /* #FBF9F5 Warm Book Paper */
+    --surface: 255 255 255;  /* #FFFFFF Crisp Surface */
+    --line: 229 225 215;     /* #E5E1D7 Warm Hairline Rules */
+    --ink: 20 22 24;         /* #141618 Deep Carbon Ink */
+    --body: 78 82 88;        /* #4E5258 Neutral Graphite */
+    --muted: 130 135 144;    /* #828790 Slate Mono */
+    --badge-bg: 242 239 232; /* #F2EFE8 */
+    --badge-text: 42 45 50;  /* #2A2D32 */
   }
 
   .dark {
-    --cream: 8 13 24;
-    --surface: 18 27 46;
-    --line: 40 53 77;
-    --ink: 236 241 248;
-    --body: 168 179 196;
-    --muted: 111 123 143;
+    /* Option 1: Editorial Paper & Vermilion (Dark / Warm Obsidian) */
+    --cream: 15 16 18;       /* #0F1012 Deep Charcoal Paper */
+    --surface: 23 25 28;     /* #17191C Surface Card */
+    --line: 39 42 47;        /* #272A2F Crisp Divider */
+    --ink: 237 234 228;      /* #EDEAE4 Soft Bone Ink */
+    --body: 158 163 172;     /* #9EA3AC Warm Ash Body */
+    --muted: 107 113 123;    /* #6B717B Muted Mono */
+    --badge-bg: 34 37 42;    /* #22252A */
+    --badge-text: 229 225 216; /* #E5E1D8 */
   }
 
   html {
@@ -28,7 +34,7 @@
   body {
     @apply bg-cream text-body antialiased;
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.25s ease, color 0.25s ease;
   }
 
   h1,
@@ -40,12 +46,8 @@
 }
 
 @layer components {
-  .text-gradient {
-    @apply bg-brand-gradient bg-clip-text text-transparent;
-  }
-
   .brand-ring {
-    box-shadow: 0 0 0 1px rgba(11, 37, 69, 0.06);
+    box-shadow: 0 0 0 1px rgba(20, 22, 24, 0.08);
   }
 }
 
@@ -72,10 +74,19 @@
   background: conic-gradient(
     from 0deg,
     transparent 0 320deg,
-    #f25f73 340deg,
-    #24c8b8 360deg
+    #F25F5C 340deg,
+    #141618 360deg
   );
   animation: border-trail-spin 3.5s linear infinite;
+}
+
+.dark .border-trail-glow {
+  background: conic-gradient(
+    from 0deg,
+    transparent 0 320deg,
+    #F25F5C 340deg,
+    #EDEAE4 360deg
+  );
 }
 
 .border-trail-content {

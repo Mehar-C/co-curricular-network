@@ -27,7 +27,7 @@ export function DiscoverGrowUnderstand() {
                 </h2>
               </div>
               <div className="lg:col-span-8">
-                <p className="text-base leading-relaxed text-body sm:text-lg">
+                <p className="text-base leading-relaxed text-body sm:text-lg font-normal">
                   Checking one opportunity properly takes time: is it real, who can apply, when does it close, what does it cost. Our research team has done that for 150+ of them, so you start from a shortlist.
                 </p>
 
@@ -42,8 +42,8 @@ export function DiscoverGrowUnderstand() {
                           onClick={() => setActiveFilter(cat)}
                           className={`rounded-lg px-3 py-1.5 font-mono text-xs font-semibold transition-all ${
                             activeFilter === cat
-                              ? 'bg-ink text-white shadow-soft dark:bg-white dark:text-navy'
-                              : 'bg-surface text-ink/70 hover:bg-surface/80 hover:text-ink border border-line'
+                              ? 'bg-ink text-cream shadow-soft'
+                              : 'bg-surface text-body hover:text-ink border border-line'
                           }`}
                         >
                           {cat}
@@ -59,10 +59,10 @@ export function DiscoverGrowUnderstand() {
                         <motion.div
                           key={item.id}
                           layout
-                          initial={{ opacity: 0, scale: 0.95 }}
+                          initial={{ opacity: 0, scale: 0.96 }}
                           animate={{ opacity: 1, scale: 1 }}
-                          exit={{ opacity: 0, scale: 0.95 }}
-                          transition={{ duration: 0.25 }}
+                          exit={{ opacity: 0, scale: 0.96 }}
+                          transition={{ duration: 0.2 }}
                           className="flex items-center justify-between rounded-xl border border-line bg-surface p-3"
                         >
                           <div className="min-w-0 pr-2">
@@ -73,7 +73,7 @@ export function DiscoverGrowUnderstand() {
                               {item.eligibility} · {item.format}
                             </p>
                           </div>
-                          <span className="flex-shrink-0 rounded bg-teal/15 px-2 py-0.5 font-mono text-[10px] font-semibold text-teal-dark dark:text-teal">
+                          <span className="flex-shrink-0 rounded bg-badge px-2 py-0.5 font-mono text-[10px] font-semibold text-badgeText">
                             {item.field}
                           </span>
                         </motion.div>
@@ -94,7 +94,7 @@ export function DiscoverGrowUnderstand() {
                 </h2>
               </div>
               <div className="lg:col-span-8 flex items-center">
-                <p className="text-base leading-relaxed text-body sm:text-lg">
+                <p className="text-base leading-relaxed text-body sm:text-lg font-normal">
                   Some of the best opportunities are a year away. In your session we note what&apos;s worth aiming for next, and we can set a follow-up for when it opens.
                 </p>
               </div>
@@ -110,7 +110,7 @@ export function DiscoverGrowUnderstand() {
                 </h2>
               </div>
               <div className="lg:col-span-8 flex items-center">
-                <p className="text-base leading-relaxed text-body sm:text-lg">
+                <p className="text-base leading-relaxed text-body sm:text-lg font-normal">
                   Every opportunity comes broken down: who can apply, what it costs, when registrations close, whether there&apos;s a selection round, and what to prepare.
                 </p>
               </div>
@@ -123,4 +123,3 @@ export function DiscoverGrowUnderstand() {
     </section>
   )
 }
-

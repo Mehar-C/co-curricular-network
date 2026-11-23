@@ -26,16 +26,16 @@ export function TeamsTabs({ selectedTeamId, onSelectTeam, onApplyForTeam }: Team
                 type="button"
                 onClick={() => onSelectTeam(team.id)}
                 className={`relative whitespace-nowrap px-4 py-3 font-heading text-sm font-semibold transition-colors sm:text-base ${
-                  isActive ? 'text-teal-dark dark:text-teal' : 'text-muted hover:text-ink'
+                  isActive ? 'text-ink' : 'text-muted hover:text-ink'
                 }`}
               >
                 <span>{team.name}</span>
 
-                {/* Animated active indicator pill / underline */}
+                {/* Animated active indicator underline */}
                 {isActive && (
                   <motion.div
                     layoutId="activeTeamTab"
-                    className="absolute inset-x-0 bottom-0 h-0.5 bg-teal"
+                    className="absolute inset-x-0 bottom-0 h-0.5 bg-coral"
                     transition={{ type: 'spring', stiffness: 350, damping: 30 }}
                   />
                 )}
@@ -49,10 +49,10 @@ export function TeamsTabs({ selectedTeamId, onSelectTeam, onApplyForTeam }: Team
           <AnimatePresence mode="wait">
             <motion.div
               key={currentTeam.id}
-              initial={{ opacity: 0, y: 14 }}
+              initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -14 }}
-              transition={{ duration: 0.28, ease: 'easeInOut' }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.25, ease: 'easeInOut' }}
               className="rounded-3xl border border-line bg-cream p-6 shadow-soft sm:p-10"
             >
               {/* Header with Title and Optional Animated Border Trail Badge */}
@@ -71,7 +71,7 @@ export function TeamsTabs({ selectedTeamId, onSelectTeam, onApplyForTeam }: Team
                   <div className="border-trail-wrapper inline-flex self-start sm:self-center">
                     <div className="border-trail-glow" />
                     <div className="border-trail-content flex items-center gap-2 px-3.5 py-1.5 font-mono text-xs font-semibold text-coral shadow-sm">
-                      <Sparkles className="h-3.5 w-3.5 text-coral animate-pulse" />
+                      <Sparkles className="h-3.5 w-3.5 text-coral" />
                       <span>{currentTeam.badgeText}</span>
                     </div>
                   </div>
@@ -83,7 +83,7 @@ export function TeamsTabs({ selectedTeamId, onSelectTeam, onApplyForTeam }: Team
                 <h4 className="font-mono text-xs uppercase tracking-wider text-muted">
                   WHAT IT DOES
                 </h4>
-                <p className="mt-2 text-base leading-relaxed text-ink sm:text-lg">
+                <p className="mt-2 text-base leading-relaxed text-ink sm:text-lg font-normal">
                   {currentTeam.whatItDoes}
                 </p>
               </div>
@@ -91,13 +91,13 @@ export function TeamsTabs({ selectedTeamId, onSelectTeam, onApplyForTeam }: Team
               {/* Grid: "This week you might" (Mono) + "Good fit if" */}
               <div className="mt-8 grid gap-8 md:grid-cols-2">
                 <div className="rounded-2xl border border-line bg-surface p-5">
-                  <h4 className="font-mono text-xs uppercase tracking-wider text-teal-dark dark:text-teal font-semibold">
+                  <h4 className="font-mono text-xs uppercase tracking-wider text-muted font-semibold">
                     THIS WEEK YOU MIGHT
                   </h4>
                   <ul className="mt-3 space-y-2 font-mono text-xs text-body sm:text-sm">
                     {currentTeam.thisWeekYouMight.map((task, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <span className="text-teal font-bold">•</span>
+                        <span className="text-coral font-bold">•</span>
                         <span>{task}</span>
                       </li>
                     ))}
@@ -114,11 +114,11 @@ export function TeamsTabs({ selectedTeamId, onSelectTeam, onApplyForTeam }: Team
                     </p>
                   </div>
 
-                  <div className="mt-6 pt-4 border-t border-line/60">
+                  <div className="mt-6 pt-4 border-t border-line">
                     <button
                       type="button"
                       onClick={() => onApplyForTeam(currentTeam.name)}
-                      className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-ink px-5 py-3 font-heading text-sm font-semibold text-white transition-all hover:bg-navy-light dark:bg-white dark:text-navy dark:hover:bg-slate-100 shadow-soft"
+                      className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-coral px-5 py-3.5 font-heading text-sm font-bold text-white shadow-soft transition-all hover:bg-coral-light active:translate-y-0"
                     >
                       <span>Apply for {currentTeam.name}</span>
                       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -135,4 +135,3 @@ export function TeamsTabs({ selectedTeamId, onSelectTeam, onApplyForTeam }: Team
     </section>
   )
 }
-

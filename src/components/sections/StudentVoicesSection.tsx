@@ -21,7 +21,7 @@ export function StudentVoicesSection() {
         
         {/* Eyebrow */}
         <div className="mb-6 text-center">
-          <span className="font-mono text-xs uppercase tracking-widest text-teal-dark dark:text-teal sm:text-sm">
+          <span className="font-mono text-xs uppercase tracking-widest text-muted font-semibold sm:text-sm">
             STUDENT VOICES
           </span>
         </div>
@@ -31,17 +31,17 @@ export function StudentVoicesSection() {
           <AnimatePresence mode="wait">
             <motion.div
               key={currentIndex}
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -15 }}
-              transition={{ duration: 0.6, ease: 'easeInOut' }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.5, ease: 'easeInOut' }}
               className="space-y-6"
             >
               <blockquote className="font-heading text-2xl font-bold leading-relaxed text-ink sm:text-4xl lg:text-5xl">
                 &ldquo;{current.quote}&rdquo;
               </blockquote>
 
-              <div className="font-mono text-sm uppercase tracking-wider text-muted sm:text-base">
+              <div className="font-mono text-xs sm:text-sm uppercase tracking-wider text-muted">
                 — {current.author}, {current.classInfo}
               </div>
             </motion.div>
@@ -57,7 +57,7 @@ export function StudentVoicesSection() {
               onClick={() => setCurrentIndex(i)}
               className={`h-1.5 rounded-full transition-all duration-300 ${
                 i === currentIndex
-                  ? 'w-8 bg-teal-dark dark:bg-teal'
+                  ? 'w-8 bg-coral'
                   : 'w-2 bg-line hover:bg-muted'
               }`}
               aria-label={`View quote ${i + 1}`}
@@ -69,4 +69,3 @@ export function StudentVoicesSection() {
     </section>
   )
 }
-

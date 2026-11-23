@@ -7,7 +7,7 @@ export function SessionWalkthrough() {
         
         {/* Eyebrow */}
         <div className="mb-4">
-          <span className="font-mono text-xs uppercase tracking-widest text-teal-dark dark:text-teal sm:text-sm">
+          <span className="font-mono text-xs uppercase tracking-widest text-muted font-semibold sm:text-sm">
             THE SESSION EXPERIENCE
           </span>
         </div>
@@ -19,12 +19,12 @@ export function SessionWalkthrough() {
         <div className="mt-14 grid gap-12 lg:grid-cols-12 lg:items-start">
           
           {/* Copy: Before, During, After */}
-          <div className="space-y-8 lg:col-span-7">
+          <div className="space-y-6 lg:col-span-7">
             <div className="rounded-2xl border border-line bg-surface p-6 shadow-soft">
-              <span className="font-mono text-xs font-bold uppercase tracking-wider text-teal-dark dark:text-teal">
+              <span className="font-mono text-xs font-bold uppercase tracking-wider text-coral">
                 BEFORE
               </span>
-              <p className="mt-2 text-base leading-relaxed text-body">
+              <p className="mt-2 text-base leading-relaxed text-body font-normal">
                 Fill in the sign-up form: school, grade, interests, any awards, and what you want out of it. Someone from our Communications team is then informed and takes your session at a time of your convenience.
               </p>
             </div>
@@ -33,16 +33,16 @@ export function SessionWalkthrough() {
               <span className="font-mono text-xs font-bold uppercase tracking-wider text-coral">
                 DURING
               </span>
-              <p className="mt-2 text-base leading-relaxed text-body">
+              <p className="mt-2 text-base leading-relaxed text-body font-normal">
                 Thirty minutes and one-on-one. We walk you through five or six opportunities picked for your interests and grade. We want you to choose at least two to go for.
               </p>
             </div>
 
             <div className="rounded-2xl border border-line bg-surface p-6 shadow-soft">
-              <span className="font-mono text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-gold">
+              <span className="font-mono text-xs font-bold uppercase tracking-wider text-coral">
                 AFTER
               </span>
-              <p className="mt-2 text-base leading-relaxed text-body">
+              <p className="mt-2 text-base leading-relaxed text-body font-normal">
                 You get a written plan with the opportunities you picked, the deadlines and first steps, and how each one adds to your profile. Possible to also set up follow up dates.
               </p>
             </div>
@@ -54,12 +54,12 @@ export function SessionWalkthrough() {
               Confidential Session Preview · Student X
             </p>
 
-            <div className="relative overflow-hidden rounded-3xl border-2 border-line bg-surface shadow-card">
-              {/* Diagonal slice overlay effect: top half clearly visible, bottom clipped with frosted cutoff */}
+            <div className="relative overflow-hidden rounded-3xl border border-line bg-surface shadow-card">
+              {/* Top half visible */}
               <div className="p-6">
                 <div className="flex items-center justify-between border-b border-line pb-4">
                   <div className="flex items-center gap-2">
-                    <User className="h-5 w-5 text-teal" />
+                    <User className="h-5 w-5 text-coral" />
                     <div>
                       <h4 className="font-heading text-sm font-bold text-ink">
                         Student X — Roadmap Report
@@ -72,26 +72,26 @@ export function SessionWalkthrough() {
 
                 <div className="mt-5 space-y-4">
                   <div>
-                    <span className="font-mono text-xs font-semibold text-teal-dark dark:text-teal uppercase">
+                    <span className="font-mono text-xs font-semibold text-coral uppercase tracking-wide">
                       Opportunities Picked
                     </span>
                     <ul className="mt-2 space-y-1.5 text-xs text-body">
                       <li className="flex items-center gap-1.5 font-medium text-ink">
-                        <CheckCircle2 className="h-3.5 w-3.5 text-teal flex-shrink-0" />
+                        <CheckCircle2 className="h-3.5 w-3.5 text-coral flex-shrink-0" />
                         1. Conrad Challenge (Aerospace & Aviation)
                       </li>
                       <li className="flex items-center gap-1.5 font-medium text-ink">
-                        <CheckCircle2 className="h-3.5 w-3.5 text-teal flex-shrink-0" />
+                        <CheckCircle2 className="h-3.5 w-3.5 text-coral flex-shrink-0" />
                         2. Young CEO Programme (Case Study Track)
                       </li>
                     </ul>
                   </div>
 
                   <div>
-                    <span className="font-mono text-xs font-semibold text-coral uppercase">
+                    <span className="font-mono text-xs font-semibold text-coral uppercase tracking-wide">
                       Next Steps & Key Dates
                     </span>
-                    <div className="mt-2 rounded-xl bg-cream p-3 text-xs text-body space-y-1 font-mono">
+                    <div className="mt-2 rounded-xl border border-line bg-cream p-3 text-xs text-body space-y-1 font-mono">
                       <p className="text-ink font-semibold">• Nov 20: Registration Form Due</p>
                       <p>• Dec 04: Executive Summary Round</p>
                       <p>• Dec 18: CCN Mentor Strategy Check-in</p>

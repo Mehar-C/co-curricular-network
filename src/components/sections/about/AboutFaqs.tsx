@@ -20,7 +20,7 @@ export function AboutFaqs() {
         
         {/* Eyebrow */}
         <div className="mb-4">
-          <span className="font-mono text-xs uppercase tracking-widest text-teal-dark dark:text-teal sm:text-sm">
+          <span className="font-mono text-xs uppercase tracking-widest text-muted font-semibold sm:text-sm">
             FREQUENTLY ASKED QUESTIONS
           </span>
         </div>
@@ -29,7 +29,7 @@ export function AboutFaqs() {
           Everything you need to know.
         </h2>
 
-        {/* 2 columns on desktop */}
+        {/* 2 columns on desktop (Watermelon UI style) */}
         <div className="mt-14 grid gap-4 lg:grid-cols-2 lg:items-start sm:gap-6">
           
           {/* Column 1 */}
@@ -41,7 +41,7 @@ export function AboutFaqs() {
               return (
                 <div
                   key={faq.question}
-                  className="rounded-2xl border border-line bg-cream/70 transition-colors hover:border-line"
+                  className="rounded-2xl border border-line bg-cream transition-colors"
                 >
                   <button
                     type="button"
@@ -52,7 +52,7 @@ export function AboutFaqs() {
                     <span>{faq.question}</span>
                     <ChevronDown
                       className={`h-5 w-5 flex-shrink-0 text-muted transition-transform duration-200 ${
-                        isOpen ? 'rotate-180 text-teal-dark dark:text-teal' : ''
+                        isOpen ? 'rotate-180 text-coral' : ''
                       }`}
                     />
                   </button>
@@ -65,7 +65,7 @@ export function AboutFaqs() {
                         transition={{ duration: 0.25, ease: 'easeInOut' }}
                         className="overflow-hidden"
                       >
-                        <div className="border-t border-line/60 px-5 pt-3 pb-5 text-sm leading-relaxed text-body sm:text-base">
+                        <div className="border-t border-line px-5 pt-3 pb-5 text-sm leading-relaxed text-body sm:text-base font-normal">
                           {faq.answer}
                         </div>
                       </motion.div>
@@ -85,7 +85,7 @@ export function AboutFaqs() {
               return (
                 <div
                   key={faq.question}
-                  className="rounded-2xl border border-line bg-cream/70 transition-colors hover:border-line"
+                  className="rounded-2xl border border-line bg-cream transition-colors"
                 >
                   <button
                     type="button"
@@ -96,7 +96,7 @@ export function AboutFaqs() {
                     <span>{faq.question}</span>
                     <ChevronDown
                       className={`h-5 w-5 flex-shrink-0 text-muted transition-transform duration-200 ${
-                        isOpen ? 'rotate-180 text-teal-dark dark:text-teal' : ''
+                        isOpen ? 'rotate-180 text-coral' : ''
                       }`}
                     />
                   </button>
@@ -109,7 +109,7 @@ export function AboutFaqs() {
                         transition={{ duration: 0.25, ease: 'easeInOut' }}
                         className="overflow-hidden"
                       >
-                        <div className="border-t border-line/60 px-5 pt-3 pb-5 text-sm leading-relaxed text-body sm:text-base">
+                        <div className="border-t border-line px-5 pt-3 pb-5 text-sm leading-relaxed text-body sm:text-base font-normal">
                           {faq.answer}
                         </div>
                       </motion.div>
@@ -126,4 +126,3 @@ export function AboutFaqs() {
     </section>
   )
 }
-

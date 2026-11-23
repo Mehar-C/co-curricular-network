@@ -45,7 +45,7 @@ export function HowToApplySection({ onOpenApply }: HowToApplySectionProps) {
         
         {/* Eyebrow */}
         <div className="mb-4">
-          <span className="font-mono text-xs uppercase tracking-widest text-teal-dark dark:text-teal sm:text-sm">
+          <span className="font-mono text-xs uppercase tracking-widest text-muted font-semibold sm:text-sm">
             HOW TO APPLY
           </span>
         </div>
@@ -56,10 +56,10 @@ export function HowToApplySection({ onOpenApply }: HowToApplySectionProps) {
 
         {/* Scroll Progress Line (matching Home's How it works) */}
         <div className="relative mt-16 mb-12 hidden md:block">
-          <div className="h-1 w-full rounded-full bg-line" />
+          <div className="h-0.5 w-full bg-line" />
           <motion.div
             style={{ width: lineWidth }}
-            className="absolute top-0 left-0 h-1 rounded-full bg-gradient-to-r from-teal to-coral"
+            className="absolute top-0 left-0 h-0.5 bg-coral"
           />
         </div>
 
@@ -68,21 +68,21 @@ export function HowToApplySection({ onOpenApply }: HowToApplySectionProps) {
           {applicationSteps.map((step, idx) => (
             <motion.div
               key={step.step}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.1 }}
               className="flex flex-col justify-between rounded-2xl border border-line bg-cream p-5 shadow-soft"
             >
               <div>
-                <span className="font-mono text-xs font-bold text-teal-dark dark:text-teal">
+                <span className="font-mono text-xs font-bold text-coral">
                   STEP {step.step}
                 </span>
                 <h3 className="mt-2 font-heading text-base font-bold text-ink">
                   {step.title}
                 </h3>
               </div>
-              <p className="mt-3 text-xs leading-relaxed text-body">
+              <p className="mt-3 text-xs leading-relaxed text-body font-normal">
                 {step.desc}
               </p>
             </motion.div>
@@ -103,7 +103,7 @@ export function HowToApplySection({ onOpenApply }: HowToApplySectionProps) {
           <button
             type="button"
             onClick={onOpenApply}
-            className="group inline-flex items-center gap-2 rounded-xl bg-coral px-8 py-4 font-heading text-base font-bold text-white shadow-soft transition-all duration-300 hover:bg-coral-light hover:shadow-card hover:-translate-y-0.5 active:translate-y-0 flex-shrink-0"
+            className="group inline-flex items-center gap-2 rounded-xl bg-coral px-8 py-4 font-heading text-base font-bold text-white shadow-soft transition-all duration-200 hover:bg-coral-light hover:shadow-card hover:-translate-y-0.5 active:translate-y-0 flex-shrink-0"
           >
             <span>Apply</span>
             <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
@@ -114,4 +114,3 @@ export function HowToApplySection({ onOpenApply }: HowToApplySectionProps) {
     </section>
   )
 }
-

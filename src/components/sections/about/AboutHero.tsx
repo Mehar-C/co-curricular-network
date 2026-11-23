@@ -5,7 +5,7 @@ export function AboutHero() {
         
         {/* Label */}
         <div className="mb-4">
-          <span className="font-mono text-xs uppercase tracking-widest text-teal-dark dark:text-teal sm:text-sm font-semibold">
+          <span className="font-mono text-xs uppercase tracking-widest text-muted sm:text-sm font-semibold">
             ABOUT CCN
           </span>
         </div>
