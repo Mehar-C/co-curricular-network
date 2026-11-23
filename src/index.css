@@ -48,3 +48,80 @@
     box-shadow: 0 0 0 1px rgba(11, 37, 69, 0.06);
   }
 }
+
+/* Border Trail Animation */
+@keyframes border-trail-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.border-trail-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 9999px;
+  padding: 1.5px;
+}
+
+.border-trail-glow {
+  position: absolute;
+  inset: -150%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0 320deg,
+    #f25f73 340deg,
+    #24c8b8 360deg
+  );
+  animation: border-trail-spin 3.5s linear infinite;
+}
+
+.border-trail-content {
+  position: relative;
+  border-radius: 9999px;
+  background-color: rgb(var(--surface));
+  z-index: 1;
+}
+
+/* Diagonal clip for session report preview */
+.diagonal-slice {
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+}
+
+/* Continuous Marquee / Slider */
+@keyframes marquee-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee-left {
+  display: flex;
+  width: max-content;
+  animation: marquee-left 35s linear infinite;
+}
+
+.animate-marquee-right {
+  display: flex;
+  width: max-content;
+  animation: marquee-right 35s linear infinite;
+}
+
+.animate-marquee-left:hover,
+.animate-marquee-right:hover {
+  animation-play-state: paused;
+}

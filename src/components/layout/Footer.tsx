@@ -1,8 +1,17 @@
-import { navLinks, siteConfig } from '../../data/content'
+import { navLinks, siteConfig, PageId } from '../../data/content'
 import { ConnectLinks } from '../ui/ConnectLinks'
 import { Logo } from '../ui/Logo'
 
-export function Footer() {
+interface FooterProps {
+  onNavigate: (page: PageId) => void
+}
+
+export function Footer({ onNavigate }: FooterProps) {
+  const handleNav = (page: PageId) => {
+    onNavigate(page)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   return (
     <footer className="bg-navy text-white">
       <div className="h-1.5 w-full bg-brand-gradient" />
@@ -11,22 +20,22 @@ export function Footer() {
           <div>
             <Logo variant="light" tagline />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/70">
-              A student-led co-curricular forum centralizing vetted opportunities in debate, MUN,
-              entrepreneurship, social initiatives, and STEM.
+              By students, for students. CCN helps high schoolers discover and sign up for competitions, MUNs, internships, and programmes in the fields they care about.
             </p>
           </div>
 
           <nav aria-label="Footer navigation">
-            <p className="text-sm font-semibold uppercase tracking-wider text-teal">Explore</p>
-            <ul className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-1">
+            <p className="text-sm font-semibold uppercase tracking-wider text-teal">Pages</p>
+            <ul className="mt-4 flex flex-col gap-2.5">
               {navLinks.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-white/70 transition-colors hover:text-white"
+                <li key={link.page}>
+                  <button
+                    type="button"
+                    onClick={() => handleNav(link.page)}
+                    className="text-left text-sm text-white/70 transition-colors hover:text-white"
                   >
                     {link.label}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -35,11 +44,14 @@ export function Footer() {
           <div>
             <p className="text-sm font-semibold uppercase tracking-wider text-teal">Connect</p>
             <ConnectLinks variant="light" className="mt-4" />
+            <p className="mt-4 text-xs text-white/60">
+              Founded Jan 2026 · Gurugram, India
+            </p>
           </div>
         </div>
 
         <div className="mt-12 border-t border-white/10 pt-8 text-center text-xs text-white/50">
-          © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
+          © {new Date().getFullYear()} {siteConfig.name}. A student-led initiative.
         </div>
       </div>
     </footer>

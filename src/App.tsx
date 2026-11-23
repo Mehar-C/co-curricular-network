@@ -1,14 +1,36 @@
+import { useEffect, useState } from 'react'
 import { Footer } from './components/layout/Footer'
 import { Header } from './components/layout/Header'
 import { BookSession } from './components/ui/BookSession'
-import { About } from './components/sections/About'
-import { CTA } from './components/sections/CTA'
-import { JoinTeam } from './components/sections/JoinTeam'
-import { Pathway } from './components/sections/Pathway'
-import { PortalHero } from './components/sections/PortalHero'
-import { Problem } from './components/sections/Problem'
+import { HomePage } from './components/sections/HomePage'
+import { AboutPage } from './components/sections/AboutPage'
+import { JoinPage } from './components/sections/JoinPage'
+import { PageId } from './data/content'
+
+function getPageFromHash(): PageId {
+  const hash = window.location.hash.toLowerCase()
+  if (hash.includes('about')) return 'about'
+  if (hash.includes('join')) return 'join'
+  return 'home'
+}
 
 function App() {
+  const [currentPage, setCurrentPage] = useState<PageId>(getPageFromHash)
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      setCurrentPage(getPageFromHash())
+    }
+    window.addEventListener('hashchange', handleHashChange)
+    return () => window.removeEventListener('hashchange', handleHashChange)
+  }, [])
+
+  const navigateTo = (page: PageId) => {
+    setCurrentPage(page)
+    window.location.hash = page === 'home' ? '' : `#${page}`
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   return (
     <>
       <a
@@ -17,16 +39,18 @@ function App() {
       >
         Skip to main content
       </a>
-      <Header />
+
+      <Header currentPage={currentPage} onNavigate={navigateTo} />
+
       <main id="main-content">
-        <PortalHero />
-        <Problem />
-        <About />
-        <Pathway />
-        <JoinTeam />
-        <CTA />
+        {currentPage === 'home' && (
+          <HomePage onNavigateAbout={() => navigateTo('about')} />
+        )}
+        {currentPage === 'about' && <AboutPage />}
+        {currentPage === 'join' && <JoinPage />}
       </main>
-      <Footer />
+
+      <Footer onNavigate={navigateTo} />
       <BookSession />
     </>
   )
